@@ -1,5 +1,5 @@
 [package]
-name = "SVGtools"
+name = "svg-tools"
 version = "0.1.0"
 authors = ["Alejandro <alejpr@kth.se>"]
 edition = "2018"
