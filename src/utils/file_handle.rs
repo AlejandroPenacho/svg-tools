@@ -1,11 +1,12 @@
 
 use std::fs::File;
-use std::io::Read;
+use std::io::BufReader;
 
-pub fn get_file_iterator(file_path: String) -> std::iter::Map<std::io::Bytes<std::fs::File>, fn(std::result::Result<u8, std::io::Error>) -> char > {
 
-    let file = File::open(file_path).expect("Failed opening file");
-    let bytes = file.bytes();
-    bytes.map(|x| x.expect("Error reading byte") as char)
+pub fn get_file_reader(file_path: String) -> BufReader<File> {
+
+    let reader = BufReader::new(File::open(file_path).expect("Error opening file")) ;
+
+    reader
 }
 
